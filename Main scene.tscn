@@ -1,3 +1,50 @@
-[gd_scene format=3 uid="uid://cpcyunt6krl1i"]
+[gd_scene load_steps=6 format=3 uid="uid://cpcyunt6krl1i"]
+
+[ext_resource type="Texture2D" uid="uid://boskqoaqthf8e" path="res://16x16 Animated Top-down Character V1.1/Seperate Spritesheets/Walk Down.png" id="1_beg2g"]
+[ext_resource type="Texture2D" uid="uid://dgegtnn23effa" path="res://16x16 Animated Top-down Character V1.1/Seperate Spritesheets/Walk Left.png" id="2_n2nng"]
+[ext_resource type="Texture2D" uid="uid://bib2k6iijbp6e" path="res://16x16 Animated Top-down Character V1.1/Seperate Spritesheets/Walk Right.png" id="3_os5hq"]
+[ext_resource type="Texture2D" uid="uid://bh6p852i4u262" path="res://16x16 Animated Top-down Character V1.1/Seperate Spritesheets/Walk Up.png" id="4_twbqg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ekxem"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_beg2g")
+}],
+"loop": true,
+"name": &"Walk Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_n2nng")
+}],
+"loop": true,
+"name": &"Walk Left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_os5hq")
+}],
+"loop": true,
+"name": &"Walk Right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_twbqg")
+}],
+"loop": true,
+"name": &"Walk Up",
+"speed": 5.0
+}]
 
 [node name="Main Scene - 2D" type="Node2D"]
+
+[node name="Player- CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player- CharacterBody2D"]
+sprite_frames = SubResource("SpriteFrames_ekxem")
+animation = &"Walk Down"
+frame_progress = 0.342357
